@@ -9,10 +9,14 @@
 	background-color: $accent
 	color: #fff
 
+*
+	box-sizing: border-box
+
 body
 	font-size: 16px
 	min-width: 320px
 	position: relative
+	margin: 0
 	line-height: 1.65
 	font-family: 'PragmaticaC'
 	overflow-x: hidden
@@ -46,54 +50,321 @@ b, strong
 	display: none
 
 .mfp-zoom-in
-  .mfp-with-anim
-    opacity: 0
-    transition: all 0.2s ease-in-out
-    transform: scale(0.8)
-  &.mfp-bg
-    opacity: 0
-    transition: all 0.3s ease-out
-  &.mfp-ready
-    .mfp-with-anim
-      opacity: 1
-      transform: scale(1)
-    &.mfp-bg
-      opacity: 0.8
-  &.mfp-removing
-    .mfp-with-anim
-      transform: scale(0.8)
-      opacity: 0
-    &.mfp-bg
-      opacity: 0	
+	.mfp-with-anim
+		opacity: 0
+		transition: all 0.2s ease-in-out
+		transform: scale(0.8)
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.3s ease-out
+	&.mfp-ready
+		.mfp-with-anim
+			opacity: 1
+			transform: scale(1)
+		&.mfp-bg
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-with-anim
+			transform: scale(0.8)
+			opacity: 0
+		&.mfp-bg
+			opacity: 0	
 
 .mfp-zoom-out
-  .mfp-with-anim
-    opacity: 0
-    transition: all 0.3s ease-in-out
-    transform: scale(1.3)
-  &.mfp-bg
-    opacity: 0
-    transition: all 0.3s ease-out
-  &.mfp-ready
-    .mfp-with-anim
-      opacity: 1
-      transform: scale(1)
-    &.mfp-bg
-      opacity: 0.8
-  &.mfp-removing
-    .mfp-with-anim
-      transform: scale(1.3)
-      opacity: 0
-    &.mfp-bg
-      opacity: 0
+	.mfp-with-anim
+		opacity: 0
+		transition: all 0.3s ease-in-out
+		transform: scale(1.3)
+	&.mfp-bg
+		opacity: 0
+		transition: all 0.3s ease-out
+	&.mfp-ready
+		.mfp-with-anim
+			opacity: 1
+			transform: scale(1)
+		&.mfp-bg
+			opacity: 0.8
+	&.mfp-removing
+		.mfp-with-anim
+			transform: scale(1.3)
+			opacity: 0
+		&.mfp-bg
+			opacity: 0
 
-.white-popup
-  position: relative
-  background: #FFF
-  padding: 25px
-  width: auto
-  max-width: 400px
-  margin: 0 auto
+// .white-popup
+//   position: relative
+//   background: #FFF
+//   padding: 25px
+//   width: auto
+//   max-width: 400px
+//   margin: 0 auto
+
+.owl-carousel
+	position: static
+
+#speelogroup-news-gallery
+.news
+	height: 600px
+	width: 415px
+	background-color: transparent
+	margin: 0 auto
+.news-card
+	height: 600px
+
+.news-card-item
+	height: 600px
+	position: relative
+	display: flex
+	background-size: cover
+.news-card-item
+	align-items: flex-start
+	&.content-bottom
+		margin-top: auto
+		align-items: flex-end
+
+.news-card-item.card-item-overlay
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0,0,0,0.3)	
+
+.card-content
+	padding: 25px
+	color: #fff
+	position: relative
+	z-index: 10
+	background-color: #fff
+	&.content-dark
+		color: #000
+	&.content-tranparent
+		background-color: transparent	
+
+
+.card-title
+	font-size: 26px
+	font-weight: bold
+	font-style: normal
+	font-stretch: normal
+	line-height: 1.23
+	padding: 40px 10px
+	&.small-title
+		font-size: 21px
+		padding: 20px 0
+
+.card-text
+	font-size: 14px
+	line-height: 1.43
+
+
+.news-main-title
+	font-weight: bold
+	color: #fff
+	border: 1px solid #fff
+	display: inline-block
+	padding: 5px 10px
+	position: absolute
+	left: 10%
+	top: -15%
+	z-index: 1000
+	&.hide
+		display: none
+
+.mfp-bg
+	opacity: .6
+
+.mfp-close-btn-in .mfp-close
+	color: transparent
+	background-image: url('../img/close.svg')
+	background-repeat: no-repeat
+	background-position: 50% 50%
+
+.mfp-close
+	top: -15%
+	right: 10%
+
+.mfp-close:active
+	top: -15%
+
+.owl-nav
+	width: 100%
+	position: absolute
+	left: 0
+	top: 0
+	z-index: 1001
+	height: 640px
+	&.active
+		display: none
+
+button.owl-prev
+	position: absolute
+	left: 0
+	top: 0
+	width: 50%
+	height: 100%
+	transform: rotate(180deg)
+	&.disabled
+		opacity: 0
+	&:focus
+		outline: none
+	svg
+		opacity: 0.4
+	&:hover
+		svg
+			opacity: 1		
+
+button.owl-next
+	position: absolute
+	right: 0
+	top: 0
+	width: 50%
+	height: 100%
+	&:focus
+		outline: none
+	svg
+		opacity: 0.4
+	&:hover
+		svg
+			opacity: 1		  
+
+.owl-dots
+	display: flex
+	justify-content: space-between
+	position: relative
+	top: 20px
+	transition: all 0.5s ease
+	opacity: 1
+	&.active
+		opacity: 0
+	button
+		height: 4px
+		width: 18%
+		margin-right: 6px
+		background-color: #fff
+		opacity: 0.4
+		&:last-child
+			margin-right: 0
+		&.active
+			opacity: 1
+		span
+			width: 100%
+			height: 4px
+			background-color: #fff
+			display: block
+
+.news-card-item.finish-slide
+	flex-direction: column
+	transition: all 0.7s ease
+	opacity: 0
+	transform: translateY(150%)
+	&.active
+		height: auto
+		opacity: 1
+		transform: translateY(0)
+
+
+.social-list
+	display: flex
+	width: 100%
+	justify-content: space-between
+	padding-top: 30px
+	a
+		display: block
+		width: 60px
+		height: 60px
+
+.seeAlso-item
+	width: 412px
+	height: 440px
+	display: block
+	background-size: cover
+	background-position: 50% 50%
+	padding: 25px
+	box-sizing: border-box
+	margin-bottom: 30px
+	display: flex
+	flex-direction: column
+	position: relative
+	text-decoration: none
+	&:hover
+		text-decoration: none
+	&:before
+		content: ""
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background-color: rgba(0,0,0,0.3)
+		z-index: 0	
+	.main-title
+		font-weight: bold
+		color: #fff
+		border: 1px solid #fff
+		display: inline-block
+		padding: 5px 10px
+		text-transform: uppercase
+		font-size: 14px
+		position: relative
+		z-index: 1
+	.top-line
+		display: flex
+		width: 100%
+		justify-content: space-between
+		align-items: center
+		position: relative
+		z-index: 1
+	.bottom-line
+		display: flex
+		width: 100%
+		flex-wrap: wrap
+		margin-top: auto
+		font-size: 21px
+		line-height: 1.24
+		font-weight: bold
+		color: #fff
+		position: relative
+		z-index: 1
+	.count
+		width: 28px
+		height: 21px
+		position: relative
+		span
+			position: absolute
+			font-size: 12px
+			left: 50%
+			top: 2px
+			transform: translateX(-80%)
+			color: #000		
+
+
+.seeAlso-title
+	font-size: 26px
+	font-weight: bold
+	padding: 15px 0
+	text-align: center
+	color: #fff
+
+.news-card-item
+	.button-start
+		width: 100%
+		height: 60px
+		display: flex
+		align-items: center
+		justify-content: center
+		background-color: #252161
+		color: #fff
+		font-size: 18px
+		text-transform: uppercase
+		font-weight: bold
+		text-decoration: none
+		span
+			transform: rotate(180deg)
+			position: relative
+			left: -10px
 
 
 @import "media" // Always at the end
