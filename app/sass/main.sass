@@ -186,6 +186,9 @@ b, strong
 	background-repeat: no-repeat
 	background-position: 50% 50%
 
+button.mfp-close.dark
+	background-image: url('../img/close-d.svg')	
+
 .mfp-close
 	top: -15%
 	right: 10%
@@ -274,11 +277,23 @@ button.owl-next
 	display: flex
 	width: 100%
 	justify-content: space-between
-	padding-top: 30px
+	padding-top: 23px
 	a
-		display: block
+		display: flex
 		width: 60px
 		height: 60px
+		align-items: center
+		justify-content: center
+		border: 2px solid #fff
+		&:hover
+			background-color: #fff
+			border: 1px solid #fff
+			svg
+				path
+					fill: #252161
+		svg
+			width: 60px
+			height: 60px
 
 .seeAlso-item
 	width: 412px
@@ -365,10 +380,19 @@ button.owl-next
 		text-transform: uppercase
 		font-weight: bold
 		text-decoration: none
-		span
+		transition: all 0.6s ease
+		border: 1px solid transparent
+		&:hover
+			background-color: #fff
+			color: #252161
+			border: 1px solid #252161
+			span
+				color: #252161
+		span.arrow
 			transform: rotate(180deg)
 			position: relative
 			left: -10px
+			height: 30px
 
 
 @import "media" // Always at the end
